@@ -43,7 +43,7 @@ public class BaseTest
 		
 		service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//dilip.lohani//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
 	    		.withIPAddress(ipAddress).usingPort(port).build();
-		//service.start();
+		service.start();
 	
 		
 		UiAutomator2Options options = new UiAutomator2Options();
@@ -72,8 +72,8 @@ public class BaseTest
 	@AfterClass(alwaysRun = true)
 	public void tearDown() 
 	{
-				//driver.quit();	
-			//	service.stop();
+				driver.quit();	
+				service.stop();
 	}
 	
 	
