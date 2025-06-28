@@ -38,7 +38,7 @@ public class BaseTest
 
 		String ipAddress = prop.getProperty("ipAddress");
 		int port = Integer.parseInt(prop.getProperty("port"));
-		String DeviceName = prop.getProperty("AndoridDeviceName");
+		String DeviceName = prop.getProperty("AndroidDeviceName");
 	
 		
 		service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//dilip.lohani//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
@@ -50,7 +50,7 @@ public class BaseTest
 		options.setDeviceName(DeviceName);
 		//options.setApp("C://Users//LOHANI DILIP//eclipse-workspace//Appium//src//test//java//Resource//ApiDemos-debug.apk");
 		options.setApp(System.getProperty("user.dir") +"//src//test//java//apkFile//General-Store.apk" );
-		driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
+		driver = new AndroidDriver(service.getUrl(), options);
 		
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
 	}
