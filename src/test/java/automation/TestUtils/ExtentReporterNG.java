@@ -36,7 +36,10 @@ public class ExtentReporterNG extends BaseTest{
 	{
 		
 	File source = driver.getScreenshotAs(OutputType.FILE);
+
 	String destinationFile = System.getProperty("user.dir")+"\\reports\\"+testCaseName+".png";
+
+
 	FileUtils.copyFile(source, new File (destinationFile));
 	return destinationFile;
 		

@@ -24,7 +24,7 @@ public class eCommerce_TC2 extends BaseTest
 		formPage.SetCountrySelection(input.get("country"));
 		formPage.SubmitForm();
 		String ToastMessage = formPage.getToastMessage();
-		Assert.assertEquals(ToastMessage, "Please enter your");
+		Assert.assertEquals(ToastMessage, "Please enter your name");
 		
 	}
 	
